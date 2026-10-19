@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Турнир Pixel Arena</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 
+  Семантические теги:
+    <header></header> - верхняя часть страницы
+    <nav></nav> - навигация
+    <main></main> - главное содержимое
+    <section></section> - тематические разделы
+    <article></article> - самостоятельный раздел
+    <footer></footer> - нижняя часть страницы
+
+  Просто контейнер:
+    <div></div>
+  -->
+
+  <!--
+  селектор {
+    свойство: значение;
+  }
+
+  h1 {
+    color: darkblue;
+  }
+  -->
+
+
+  <header>
+    <h1>Pixel Arena</h1>
+    <p>Открытый игровой турнир для игроков.</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">О турнире</a></li>
+      <li><a href="#registration">Регистрация на турнир</a></li>
+      <li><a href="#rules">Правила</a></li>
+      <li><a href="#schedule">Расписание</a></li>
+      <li><a href="#photo">Фото</a></li>
+      <li><a href="#prizes">Призы</a></li>
+      <li><a href="#contacts">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <!-- <div class="example_box">
+    Блочная модель
+  </div> -->
+
+  <main>
+    <section class="card" id="about">
+      <h2>Информация о турнире</h2>
+      <p>
+        Турнир состоится <span style="color: red;">25 октября в 10:00 по мск.</span>
+        Участники будут соревноваться <span style="color: green;">в нескольких дисциплинах.</span>
+      </p>
+      <h3>Место проведения</h3>
+      <p>г.Москва, улица Незнакомая, д.13</p>
+    </section>
+
+    <section class="card" id="registration">
+      <h2>Регистрация на турнир</h2>
+      <p>Заполните анкету для участия в турнире</p>
+      <form action="/register" method="post">
+        <label for="player-name">Имя участника:</label>
+        <input 
+          type="text" 
+          id="player-name" 
+          name="player_name"
+          placeholder="Например, Алексей"
+          required
+          min_length="2"
+          max_length="30"
+        >
+
+        <label for="player-email">Email</label>
+        <input 
+          type="email" 
+          id="player-email" 
+          name="player_email"
+          placeholder="example@mail.ru"
+          required
+        >
+
+        <label for="player-age">Возраст участника</label>
+        <input
+          type="number"
+          id="player-age"
+          name="player_age"
+          placeholder="18"
+          required
+          min="12"
+          max="101"
+        >
+
+        <label for="player-telephone">Телефон</label>
+        <input
+          type="tel"
+          id="player-telephone"
+          name="player_telephone"
+          placeholder="+7 (999) 000-00-00"
+          required
+          pattern="^(\+7|7|8)?[\s\-]?\(?[489][0-9]{2}\)?[\s\-]?[0-9]{3}[\s\-]?[0-9]{2}[\s\-]?[0-9]{2}$"
+        >
+
+        <p>Выберите игровую дисциплину</p>
+        <input 
+          type="radio"
+          id="chess"
+          name="discipline"
+          value="chess"
+          required
+        >
+        <label class="option" for="chess">Шахматы</label>
+      
+        <input
+          type="radio"
+          id="race"
+          name="discipline"
+          value="race"
+        >
+        <label class="option" for="race">Гонки</label>
+
+        <input
+          type="radio"
+          id="strategy"
+          name="discipline"
+          value="strategy"
+        >
+        <label class="option" for="strategy">Стратегия</label>
+
+        <p>Что понадобится участнику</p>
+        <input
+          type="checkbox"
+          id="buds"
+          name="equip"
+          value="buds"
+        >
+        <label class="option" for="buds">Наушники</label>
+
+        <input
+          type="checkbox"
+          id="laptop"
+          name="equip"
+          value="laptop"
+        >
+        <label class="option" for="laptop">Ноутбук</label>
+
+        <label for="level">Уровень подготовки:</label>
+        <select id="level" name="level" required>
+          <option value="">Выберите уровень</option>
+          <option value="beginner">Начинающий</option>
+          <option value="expirienced">Опытный</option>
+          <option value="professional">Профессионал</option>
+        </select>
+
+        <label for="comment">Комментарий организаторам:</label>
+
+        <textarea
+          id="comment"
+          name="comment"
+          rows="5"
+          maxlength="300"
+          placeholder="Расскажите о своём опыте участия в турнирах"
+        ></textarea>
+
+        <input
+          type="checkbox"
+          id="agreement"
+          name="agreement"
+          value="yes"
+          required
+        >
+
+        <label class="option" for="agreement">
+            Я ознакомился с правилами турнира
+        </label>
+
+        <button class="button_reg" type="submit">Зарегистрироваться</button>
+      </form>
+    </section>
+    
+    <section class="card" id="rules">
+      <h2>Правила турнира</h2>
+      <ul>
+          <li>Участнику должно быть не менее 12 лет</li>
+          <li>Необходима регистрация на турнир</li>
+          <li>Запрещено мешать другим участникам</li>
+          <li>Каждый участник играет на своём аккаунте</li>
+      </ul>
+    </section>
+
+    <section class="card" id="schedule">
+      <table>
+        <tr>
+          <th >Время</th>
+          <th >Событие</th>
+          <th >Место</th>
+        </tr>
+
+        <tr>
+          <td >10:00</td>
+          <td >Открытие турнира</td>
+          <td >Главная сцена</td>
+        </tr>
+
+        <tr>
+          <td >10:30</td>
+          <td >Первый этап</td>
+          <td >Игровой зал №1</td>
+        </tr>
+
+        <tr>
+          <td >11:00</td>
+          <td >Квалификационный </td>
+          <td >Игровой зал №1</td>
+        </tr>
+      </table>
+    </section>
+  
+    <section class="card" id="photo">
+      <h2>Фото прошлых турниров</h2>
+      <img 
+        src="https://avatars.mds.yandex.net/i?id=2a000001a0b2fd24801c37736c02f45cd7d8-1600984-fast-images&n=13"
+        alt="Участники игрового турнир"
+      >
+      <img
+        src="https://avatars.mds.yandex.net/i?id=2a000001a0b021f2550bd85a1d83e7dadd96-1641812-fast-images&n=13"
+        alt="Процесс игры в шахматы на турнире"
+      >
+    </section>
+  
+    <section class="card" id="prizes">
+      <h2>Призы</h2>
+      <p>Призовыми местами считаются первые 3 места.</p>
+      <ul>
+          <li>1 место - Компьютер</li>
+          <li>2 место - Планшет</li>
+          <li>3 место - Наушники</li>
+      </ul>
+    </section>
+  
+    <section class="card" id="contacts">
+      <h2>Полезные ссылки</h2>
+      <ul>
+          <li><a href="https://example.com" target="_blank">Посмотреть полезные правила</a></li>
+          <li><a href="https://innoprog.ru/?ysclid=mu6jb0dv7a350970631">Сайт организаторов</a></li>  
+          <li><a href="mailto:the13mufasa@gmail.com">Связаться с организатором</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <ul>
+      <li><a href="#">Поддержка</a></li>
+      <li><a href="#">Реклама</a></li>
+      <li><a href="#">Контакты</a></li>
+    </ul>
+    <p>© 2026 ООО "Pixel Arena"</p>
+  </footer>
+
+
+</body>
+</html>
