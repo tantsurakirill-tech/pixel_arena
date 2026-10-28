@@ -185,3 +185,27 @@ footer a {
         grid-template-columns: 1fr;
     }
 }
+
+.message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.message-success {
+    color: darkgreen;
+    background-color: lightgreen;
+}
+
+.message-error {
+    color: darkred;
+    background-color: lightpink;
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    color: red;
+}

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <title>Турнир Pixel Arena</title>
   <link rel="stylesheet" href="style.css">
-  <script src="main.js"></script>
+  <script src="main.js" defer></script>
 </head>
 <body>
 
@@ -57,7 +57,7 @@
     <section class="card" id="about">
       <h2>Информация о турнире</h2>
       <p>
-        Турнир состоится <span style="color: red;">25 октября в 10:00 по мск.</span>
+        Турнир состоится <span class="datetime" style="color: red;">25 октября в 10:00 по мск.</span>
         Участники будут соревноваться <span style="color: green;">в нескольких дисциплинах.</span>
       </p>
       <h3>Место проведения</h3>
@@ -184,6 +184,8 @@
 
         <button class="button_reg" type="submit">Зарегистрироваться</button>
       </form>
+
+      <p class="message hidden" id="registration-message">Тивирп</p>
     </section>
     
     <section class="card" id="rules">
